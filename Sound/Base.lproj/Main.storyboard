@@ -15,24 +15,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEN-VI-2gr">
-                                <rect key="frame" x="114" y="363" width="200" height="200"/>
-                                <state key="normal" image="drumImage"/>
-                                <connections>
-                                    <action selector="touchDownDrumButton" destination="BYZ-38-t0r" eventType="touchDown" id="EE6-q6-0K4"/>
-                                    <action selector="touchUpDrumButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgm-KH-oxw"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hL3-xT-uRS">
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEN-VI-2gr">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="212"/>
+                                        <state key="normal" image="drumImage"/>
+                                        <connections>
+                                            <action selector="touchDownDrumButton" destination="BYZ-38-t0r" eventType="touchDown" id="EE6-q6-0K4"/>
+                                            <action selector="touchUpDrumButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgm-KH-oxw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-b6-RPc">
+                                        <rect key="frame" x="0.0" y="212" width="428" height="212"/>
+                                        <state key="normal" image="pianoImage"/>
+                                        <connections>
+                                            <action selector="touchDownPianoButton" destination="BYZ-38-t0r" eventType="touchDown" id="tli-Kc-dz3"/>
+                                            <action selector="touchUpPianoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="wud-QD-U8P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHs-Gl-L3R">
+                                        <rect key="frame" x="0.0" y="424" width="428" height="212"/>
+                                        <state key="normal" image="guitarImage"/>
+                                        <connections>
+                                            <action selector="touchDownGuitarButton" destination="BYZ-38-t0r" eventType="touchDown" id="xxN-sm-2ce"/>
+                                            <action selector="touchUpGuitarButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="wac-8M-V0T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AH-TV-M21">
+                                        <rect key="frame" x="0.0" y="636" width="428" height="212"/>
+                                        <state key="normal" image="cymbalImage"/>
+                                        <connections>
+                                            <action selector="touchDownCymbalButton" destination="BYZ-38-t0r" eventType="touchDown" id="gCU-un-ywp"/>
+                                            <action selector="touchUpCymbalButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="gMq-b8-0gM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="YEN-VI-2gr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ZY-ZS-CG0"/>
-                            <constraint firstItem="YEN-VI-2gr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DTC-0A-KRE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hL3-xT-uRS" secondAttribute="trailing" id="fLH-kZ-IaW"/>
+                            <constraint firstItem="hL3-xT-uRS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pJg-wf-BgH"/>
+                            <constraint firstItem="hL3-xT-uRS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tEo-bU-a13"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hL3-xT-uRS" secondAttribute="bottom" id="xvb-Um-Sga"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cymbalButton" destination="8AH-TV-M21" id="hrc-gp-hGO"/>
                         <outlet property="drumButton" destination="YEN-VI-2gr" id="Igg-al-L5Q"/>
+                        <outlet property="guitarButton" destination="HHs-Gl-L3R" id="Fc7-3X-daf"/>
+                        <outlet property="pianoButton" destination="upi-b6-RPc" id="0T3-Sn-SQa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -41,6 +75,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cymbalImage" width="200" height="200"/>
         <image name="drumImage" width="200" height="200"/>
+        <image name="guitarImage" width="200" height="200"/>
+        <image name="pianoImage" width="200" height="200"/>
     </resources>
 </document>
